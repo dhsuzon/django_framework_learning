@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <h1>author:{{author}}</h1>
+    <h1>age:{{age}}</h1>
+    {% comment %} coditional statement {% endcomment %}
+    {% if age >= 20 %}
+    <h2>you will get driving lisence</h2>
+    {% elif age >= 10 and age <= 18 %}
+    <h2>you buy the car</h2>
+    {% else %}
+    <h2>you not buy the car</h2>
+    {% endif %}
+     {{lst}}
+     <h1>{{lst | length}}</h1>
+     
+     <h1>List:{{lst | join:"-"}}</h1>
+     {{birthday | date:"D/d /M /Y"}}
+     {{age|add:"5"}}
+     <h1>List:{{"python-is-best"|cut:"-"}}</h1>
+    {% comment %} control  statement {% endcomment %}
+     {% for i in course%}
+     <h3>id:{{i.id}}</h3>
+     <h3>name:{{i.name}}</h3>
+     {% endfor %}
+
+
+</body>
+</html>
