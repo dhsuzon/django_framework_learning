@@ -1,0 +1,23 @@
+# Django
+*.log
+*.pot
+*.plc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Environments
+env/
+venv/
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# macOS
+.DS_Store
+
+# Other
+CertificateSigningRequest.certSigningRequest

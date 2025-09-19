@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="pt-5 my-4 mx-auto text-center rounded-2 " style="width:500px; height: 700px; background-color:#00f0f0">
+     <H2 class="text-center">Add Author</H2>
+    <form action="" method="POST">
+     {% csrf_token %}
+     {% load crispy_forms_tags %}
+     {{form | crispy}}
+     <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock  %}

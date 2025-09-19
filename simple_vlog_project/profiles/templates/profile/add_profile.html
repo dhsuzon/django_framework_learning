@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="pt-5 mx-auto my-4 text-center rounded-2" style="width:50%; height: 650px; background-color:#00f0f0">
+    <H2>Add Profile</H2>
+    <form action="" method="POST">
+     {% csrf_token %}
+     {% load crispy_forms_tags %}
+     {{form | crispy}}
+     <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock  %}

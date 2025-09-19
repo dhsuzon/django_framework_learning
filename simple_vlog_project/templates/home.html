@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row px-2 my-2 g-3">
+  {% for post in PostData%}
+    <div class="col-sm-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.content}}</p>
+         <button class="btn btn-primary m-1 btn-small" disabled>{{post.Author.name}}</button>
+         <br>
+        {% for ct in post.Category.all%}
+         <button class="btn btn-success m-1 btn-small d-inline" disabled>{{ct.name}}</button>
+        {% endfor%}
+        <br>
+      </div>
+    </div>
+  </div>
+{% endfor%}
+</div>
+
+{% endblock %}
