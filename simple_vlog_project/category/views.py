@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from category.forms import CategoryForm
 
 # Create your views here.
@@ -8,8 +8,7 @@ def Add_Category(request):
         form = CategoryForm(request.POST)
         if form.is_valid():
             form.save(commit=True)
-            print(form.cleaned_data["name"])
-            return render(request,'category/add_category.html',{'form':form})
+            return redirect('add_category')
     else:    
         form = CategoryForm()
     return render(request,'category/add_category.html',{'form':form})

@@ -1,23 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row px-2 my-2 g-3">
+<div class="row px-2 my-5 g-1">
   {% for post in PostData%}
-    <div class="col-sm-3">
-    <div class="card">
+    <div class="col-sm-3 ">
+    <div class="card h-100">
       <div class="card-body">
         <h5 class="card-title">{{post.title}}</h5>
         <p class="card-text">{{post.content}}</p>
-         <button class="btn btn-primary m-1 btn-small" disabled>{{post.Author.name}}</button>
+         <small>Author:<button class="btn btn-primary m-1 btn-small" disabled>{{post.Author.name}}</button></small>
          <br>
-        {% for ct in post.Category.all%}
-         <button class="btn btn-success m-1 btn-small d-inline" disabled>{{ct.name}}</button>
-        {% endfor%}
+        <small>Category:{% for ct in post.Category.all%}
+        <button class="btn btn-success m-1 btn-small d-inline" disabled>{{ct.name}}</button>
+        {% endfor%}</small>
         <br>
+       
+       <a href="{% url 'edit_post' post.id %}" class="btn btn-warning m-1"> Edit_Post</a>
+       <a href="{% url 'delete_post' post.id %}" class="btn btn-danger m-1"> Delete_Post</a>
       </div>
     </div>
   </div>
 {% endfor%}
 </div>
-
+  
 {% endblock %}

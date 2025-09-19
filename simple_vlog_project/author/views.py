@@ -8,7 +8,6 @@ def Add_Author(request):
         form = AuthorForm(request.POST)
         if form.is_valid():
             form.save(commit=True)
-            print(form.cleaned_data["name"])
             return redirect('add_author')
     else:    
         form = AuthorForm()
